@@ -1,0 +1,57 @@
+<div class="panel-body">
+    <a class="btn-floating btn-large waves-effect waves-light red" href="#/job/create">
+        <i class="material-icons">add</i>
+    </a>
+    <br/><br/>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Category Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Post Date
+            </th>
+            <th>
+                Closing Date
+            </th>
+            <th width="250px">
+                Action
+            </th>
+        </thead>
+        <tr data-ng-repeat="j in jobs.data">
+            <td>
+                <span data-ng-bind="j.id"></span>
+            </td>
+            <td>
+                <span data-ng-bind="j.name"></span>
+            </td>
+            <td>
+                <span data-ng-bind="j.category_name"></span>
+            </td>
+            <th>
+                <span data-ng-bind="j.description"></span>
+            </th>
+            <td>
+                <span data-ng-bind="j.post_date"></span>
+            </td>
+            <td>
+                <span data-ng-bind="j.closing_date"></span>
+            </td>
+            <td>
+                <a href="#/job/edit/{{j.id}}">
+                    <md-button class="md-raised">Edit</md-button>
+                </a>
+                <md-button class="md-raised md-warn" data-ng-click="remove(j.id);">Delete</md-button>
+            </td>
+        </tr>
+    </table>
+</div>

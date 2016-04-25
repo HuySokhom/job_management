@@ -1,0 +1,23 @@
+<form data-ng-submit="save();" name="myForm">
+	<h4>Edit Category</h4>
+	<md-input-container class="md-block">
+		<label>Category Name</label>
+		<input
+			required name="category name"
+			data-ng-model="category.name"
+		/>
+	</md-input-container>
+	<md-input-container class="md-block">
+		<label>Description</label>
+		<textarea
+			required name="description"
+			data-ng-model="category.description"
+		></textarea>
+	</md-input-container>
+	<a href="#/category">
+		<md-button class="md-raised">Cancel</md-button>
+	</a>
+	<md-button class="md-raised md-primary">Save</md-button>
+</form>
+
+

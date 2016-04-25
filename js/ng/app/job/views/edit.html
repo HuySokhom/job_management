@@ -1,0 +1,59 @@
+<form data-ng-submit="save();" name="myForm">
+	<h4>Edit Job</h4>
+
+	<label>Category</label>
+	<select
+		data-ng-model="job.category_id"
+		data-ng-options="category.id as category.name for category in categories.data"
+		data-ng-init="job.category_id == category.id"
+		class="form-control"
+		required
+	>
+		<option value="">--Select--</option>
+	</select>
+
+	<md-input-container class="md-block">
+		<label>Job Title</label>
+		<input
+			required
+			data-ng-model="job.name"
+		/>
+	</md-input-container>
+
+	<div
+		cambodia-date-picker
+		date-format="y/MM/dd"
+	>
+		<input
+			type="text"
+			class="form-control"
+			required
+			data-ng-model="job.post_date"
+		/>
+	</div>
+	<div
+		cambodia-date-picker
+		date-format="y/MM/dd"
+	>
+		<input
+			type="text"
+			class="form-control"
+			required
+			data-ng-model="job.closing_date"
+		/>
+	</div>
+
+	<md-input-container class="md-block">
+		<label>Description</label>
+		<textarea
+			required
+			data-ng-model="job.description"
+		></textarea>
+	</md-input-container>
+	<a href="#/job">
+		<md-button class="md-raised">Cancel</md-button>
+	</a>
+	<md-button class="md-raised md-primary">Save</md-button>
+</form>
+
+

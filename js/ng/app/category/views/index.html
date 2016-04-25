@@ -1,0 +1,42 @@
+<div class="panel-body">
+    <a
+        class="btn-floating btn-large waves-effect waves-light red"
+        href="#/category/create"
+    >
+        <i class="material-icons">add</i>
+    </a>
+    <br/><br/>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th width="250px">
+                Action
+            </th>
+        </thead>
+        <tr data-ng-repeat="c in categories.data">
+            <td>
+                <span data-ng-bind="c.id"></span>
+            </td>
+            <td>
+                <span data-ng-bind="c.name"></span>
+            </td>
+            <td>
+                <span data-ng-bind="c.description"></span>
+            </td>
+            <td>
+                <a href="#/category/edit/{{c.id}}">
+                    <md-button class="md-raised">Edit</md-button>
+                </a>
+                <md-button class="md-raised md-warn" data-ng-click="remove(c.id);">Delete</md-button>
+            </td>
+        </tr>
+    </table>
+</div>
